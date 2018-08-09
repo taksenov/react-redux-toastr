@@ -1,11 +1,24 @@
-import {mapToToastrMessage} from './utils.js';
+import {
+  mapToToastrMessage
+} from './utils.js';
 import EventEmitter from 'eventemitter3';
 const emitter = new EventEmitter();
 
 const addToToastr = (type, array) => emitter.emit('add/toastr', mapToToastrMessage(type, array));
 
 let actions = {};
-['light', 'message', 'info', 'success', 'warning', 'error'].forEach(item => {
+// Wombat settings Add toastrs without icons.
+['light',
+  'message',
+  'info',
+  'success',
+  'warning',
+  'error',
+  'successWithoutIcon',
+  'infoWithoutIcon',
+  'warningWithoutIcon',
+  'errorWithoutIcon'
+].forEach(item => {
   actions[item] = (...args) => addToToastr(item, args);
 });
 
@@ -28,4 +41,3 @@ actions.confirm = (...args) => {
 
 export const EE = emitter;
 export const toastrEmitter = actions;
-

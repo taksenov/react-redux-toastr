@@ -27,23 +27,34 @@ export default class Menu extends React.Component {
   render() {
     return (
         <ul className="menu">
+
+          <li className="success" onClick={() => this.handleClick('successWithoutIcon')}>
+            <span className="icon-exclamation-triangle"/>
+          </li>
+          <li className="info" onClick={() => this.handleClick('infoWithoutIcon')}>
+            <span className="icon-exclamation-triangle"/>
+          </li>
+          <li className="warning" onClick={() => this.handleClick('warningWithoutIcon')}>
+            <span className="icon-exclamation-triangle"/>
+          </li>
+          <li className="warning" onClick={() => this.handleClick('errorWithoutIcon')}>
+            <span className="icon-exclamation-triangle"/>
+          </li>
+
           <li className="success" onClick={() => {
-            toastr.success(
-              'In the beginning was the word',
-              'and the Word was with God, and the Word was God...',
-              {
-                timeOut: 10000,
-                position: 'top-left',
-                progressBar: true,
-                width: '300px'
-              }
-            );
+            toastr.warningWithoutIcon(
+                'lorem ipsum',
+                'and the Word was with God, and the Word was God...', {
+                  timeOut: 3000,
+                  position: 'bottom-right',
+                  progressBar: true,
+                }
+              );
           }}>
             <span className="icon-check"/>
           </li>
-          <li className="warning" onClick={() => this.handleClick('warning')}>
-            <span className="icon-exclamation-triangle"/>
-          </li>
+
+
           <li className="info" onClick={() => {
             toastr.info('Jesus answered, “I am the way and the truth and the life. No one comes to the Father except through Me.', {
               progressBar: true,
@@ -93,4 +104,4 @@ export default class Menu extends React.Component {
       </ul>
     );
   }
-}
+}    
