@@ -22,8 +22,6 @@ export default class ProgressBar extends React.Component {
     this.intervalId = setInterval(() => {
       const percent = this.state.percent - distance;
 
-      console.log('PERCENTS =', Math.trunc(100 - percent));
-
       this.setState({
         percent: percent > 0 ? percent : 0
       });
