@@ -11,7 +11,9 @@ export default class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {percent: 100};
+    this.state = {
+      percent: 100
+    };
     this.intervalId = null;
   }
 
@@ -20,7 +22,11 @@ export default class ProgressBar extends React.Component {
     this.intervalId = setInterval(() => {
       const percent = this.state.percent - distance;
 
-      this.setState({percent: percent > 0 ? percent : 0});
+      console.log('PERCENTS =', Math.trunc(100 - percent));
+
+      this.setState({
+        percent: percent > 0 ? percent : 0
+      });
     }, 10);
   }
 
@@ -37,12 +43,12 @@ export default class ProgressBar extends React.Component {
   }
 
   render() {
-    const {percent} = this.state;
+    const {
+      percent
+    } = this.state;
 
-    return (
-      <div className="rrt-progress-container">
-        <div className="rrt-progressbar" style={{width: `${percent}%`}}></div>
-      </div>
-    );
+    return ( <div className = "rrt-progress-container">
+      <div className = "rrt-progressbar"  style = {{width: `${120 - percent}%`}}></div>
+    </div> );
   }
 }

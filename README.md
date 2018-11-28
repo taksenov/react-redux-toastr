@@ -1,3 +1,12 @@
+#@SML/react-redux-toastr
+
+This fork using in my project.
+
+1) `npm run start` run development server;
+2) `npm run build` make build;
+
+All fixes need make in `/src` folder.
+
 ## `react-redux-toastr` [demo](http://diegoddox.github.io/react-redux-toastr/)
 
 <a href="https://www.npmjs.com/package/react-redux-toastr"><img src="https://img.shields.io/npm/v/react-redux-toastr.svg?style=flat-square" alt="NPM Version"></a>
